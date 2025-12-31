@@ -1,0 +1,2142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-12-31T15:22:38.681731" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests Ihm" source="C:\MonProjetTests\tests_ihm">
+<suite id="s1-s1" name="1-Se connecter-valide" source="C:\MonProjetTests\tests_ihm\1-Se connecter-valide.robot">
+<test id="s1-s1-t1" name="My First Test" line="2">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-31T15:22:38.747968" level="INFO">Hello World</msg>
+<arg>Hello World</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-31T15:22:38.747968" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:22:38.746911" elapsed="0.002087"/>
+</test>
+<status status="PASS" start="2025-12-31T15:22:38.741951" elapsed="0.007958"/>
+</suite>
+<suite id="s1-s2" name="2-Login" source="C:\MonProjetTests\tests_ihm\2-Login.robot">
+<test id="s1-s2-t1" name="Test Simple" line="2">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-31T15:22:38.755911" level="INFO">Hello Jenkins</msg>
+<arg>Hello Jenkins</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-31T15:22:38.755911" elapsed="0.001121"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:22:38.755911" elapsed="0.038482"/>
+</test>
+<status status="PASS" start="2025-12-31T15:22:38.751907" elapsed="0.062647"/>
+</suite>
+<suite id="s1-s3" name="Connexions-Invalides" source="C:\MonProjetTests\tests_ihm\connexions-invalides.robot">
+<test id="s1-s3-t1" name="Test Utilisateur Valide Mot De Passe Vide" line="9">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:22:40.807668" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:22:43.277456" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:22:40.806575" elapsed="8.368635"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:22:49.175210" elapsed="0.319814"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:22:49.496027" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:22:49.496027" elapsed="12.174946"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:22:40.805423" elapsed="20.867182"/>
+</kw>
+<kw name="Un Message d'Erreur Doit Etre Visible Apres Une Connexion Incorrecte">
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:01.710100" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:01.678605" elapsed="2.474450"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:23:04.154054" elapsed="0.325437"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:01.678605" elapsed="2.800886"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:04.481492" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:04.480489" elapsed="0.308092"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:04.789581" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:04.788581" elapsed="0.195603"/>
+</kw>
+<arg>${nom_utilisateur}</arg>
+<status status="PASS" start="2025-12-31T15:23:04.480489" elapsed="0.503695"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:04.986179" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:04.985181" elapsed="0.132587"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:05.118765" level="INFO">Typing text '' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:05.117768" elapsed="0.114905"/>
+</kw>
+<arg>${mot_de_passe}</arg>
+<status status="PASS" start="2025-12-31T15:23:04.985181" elapsed="0.247492"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:05.234674" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:05.233674" elapsed="0.191807"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:05.233674" elapsed="0.191807"/>
+</kw>
+<kw name="Vérifier Que Le Message d'Erreur Est Visible">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:23:05.426479" elapsed="0.767590"/>
+</kw>
+<kw name="Element Text Should Not Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:06.195397" level="INFO">Verifying element 'css=#modal-login .error' does not contain exact text ''.</msg>
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<status status="PASS" start="2025-12-31T15:23:06.194398" elapsed="0.038643"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:05.426479" elapsed="0.806562"/>
+</kw>
+<arg>robot</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-12-31T15:23:01.676608" elapsed="4.557429"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:22:40.804334" elapsed="25.429703"/>
+</test>
+<test id="s1-s3-t2" name="Test Utilisateur Vide Mot De Passe Valide" line="10">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:06.237036" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:23:07.892420" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:23:06.236038" elapsed="5.326283"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:23:11.562321" elapsed="0.069334"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:11.632657" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:23:11.632657" elapsed="6.892689"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:06.236038" elapsed="12.290307"/>
+</kw>
+<kw name="Un Message d'Erreur Doit Etre Visible Apres Une Connexion Incorrecte">
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:18.529342" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:18.529342" elapsed="0.224608"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:23:18.753950" elapsed="0.295903"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:18.528342" elapsed="0.521511"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:19.053093" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:19.051853" elapsed="0.239323"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:19.292559" level="INFO">Typing text '' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:19.292559" elapsed="0.177330"/>
+</kw>
+<arg>${nom_utilisateur}</arg>
+<status status="PASS" start="2025-12-31T15:23:19.050856" elapsed="0.420033"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:19.471891" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:19.471891" elapsed="0.141820"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:19.614711" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:19.613711" elapsed="0.139116"/>
+</kw>
+<arg>${mot_de_passe}</arg>
+<status status="PASS" start="2025-12-31T15:23:19.470889" elapsed="0.282941"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:19.754828" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:19.754828" elapsed="0.176662"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:19.753830" elapsed="0.178662"/>
+</kw>
+<kw name="Vérifier Que Le Message d'Erreur Est Visible">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:23:19.933493" elapsed="0.683227"/>
+</kw>
+<kw name="Element Text Should Not Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:20.618093" level="INFO">Verifying element 'css=#modal-login .error' does not contain exact text ''.</msg>
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<status status="PASS" start="2025-12-31T15:23:20.617090" elapsed="0.041910"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:19.932492" elapsed="0.727483"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>robot</arg>
+<status status="PASS" start="2025-12-31T15:23:18.527343" elapsed="2.132632"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:06.235036" elapsed="14.424939"/>
+</test>
+<test id="s1-s3-t3" name="Test Utilisateur Vide Mot De Passe Vide" line="11">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:20.663136" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:23:21.250229" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:23:20.663136" elapsed="3.302404"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:23:23.965540" elapsed="0.093344"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:24.059882" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:23:24.058884" elapsed="7.965648"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:20.661973" elapsed="11.362559"/>
+</kw>
+<kw name="Un Message d'Erreur Doit Etre Visible Apres Une Connexion Incorrecte">
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:32.030532" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:32.030532" elapsed="0.784970"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:23:32.816502" elapsed="0.869483"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:32.029533" elapsed="1.656452"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:33.687983" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:33.686984" elapsed="0.224345"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:33.912329" level="INFO">Typing text '' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:33.911329" elapsed="0.598647"/>
+</kw>
+<arg>${nom_utilisateur}</arg>
+<status status="PASS" start="2025-12-31T15:23:33.685985" elapsed="0.823991"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:34.511978" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:34.511978" elapsed="0.244756"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:34.758731" level="INFO">Typing text '' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:34.757733" elapsed="0.283275"/>
+</kw>
+<arg>${mot_de_passe}</arg>
+<status status="PASS" start="2025-12-31T15:23:34.510978" elapsed="0.531032"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:35.043042" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:23:35.042010" elapsed="0.204424"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:35.042010" elapsed="0.204424"/>
+</kw>
+<kw name="Vérifier Que Le Message d'Erreur Est Visible">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:23:35.248432" elapsed="0.685634"/>
+</kw>
+<kw name="Element Text Should Not Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:35.935291" level="INFO">Verifying element 'css=#modal-login .error' does not contain exact text ''.</msg>
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<status status="PASS" start="2025-12-31T15:23:35.934206" elapsed="0.038089"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:35.246434" elapsed="0.725861"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-12-31T15:23:32.025532" elapsed="3.946763"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:20.660973" elapsed="15.312316"/>
+</test>
+<test id="s1-s3-t4" name="Test Utilisateur Non Valide Mot De Passe Valide" line="12">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:35.978290" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:23:37.743174" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:23:35.977324" elapsed="6.578366"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:23:42.555690" elapsed="0.190127"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:23:42.746817" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:23:42.745817" elapsed="25.933567"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:35.976290" elapsed="32.703094"/>
+</kw>
+<kw name="Un Message d'Erreur Doit Etre Visible Apres Une Connexion Incorrecte">
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:08.682499" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:08.682499" elapsed="0.396549"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:24:09.080048" elapsed="0.544191"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:08.681508" elapsed="0.943734"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:09.627240" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:09.626240" elapsed="0.197797"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:09.825849" level="INFO">Typing text 'azerty' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:09.824037" elapsed="0.273978"/>
+</kw>
+<arg>${nom_utilisateur}</arg>
+<status status="PASS" start="2025-12-31T15:24:09.625242" elapsed="0.473799"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:10.101015" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:10.100015" elapsed="0.210971"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:10.311959" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:10.310986" elapsed="0.196225"/>
+</kw>
+<arg>${mot_de_passe}</arg>
+<status status="PASS" start="2025-12-31T15:24:10.099041" elapsed="0.409172"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:10.509213" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:10.509213" elapsed="0.166051"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:10.508213" elapsed="0.167051"/>
+</kw>
+<kw name="Vérifier Que Le Message d'Erreur Est Visible">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:24:10.676267" elapsed="0.677762"/>
+</kw>
+<kw name="Element Text Should Not Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:11.356114" level="INFO">Verifying element 'css=#modal-login .error' does not contain exact text ''.</msg>
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<status status="PASS" start="2025-12-31T15:24:11.354029" elapsed="0.044026"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:10.675264" elapsed="0.722791"/>
+</kw>
+<arg>azerty</arg>
+<arg>robot</arg>
+<status status="PASS" start="2025-12-31T15:24:08.680384" elapsed="2.717671"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:23:35.975289" elapsed="35.422766"/>
+</test>
+<test id="s1-s3-t5" name="Test Utilisateur Valide Mot De Passe Non Valide" line="13">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:11.404053" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:24:13.931292" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:24:11.403056" elapsed="5.581241"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:24:16.985320" elapsed="1.063067"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:18.049388" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:24:18.049388" elapsed="7.179805"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:11.403056" elapsed="13.826137"/>
+</kw>
+<kw name="Un Message d'Erreur Doit Etre Visible Apres Une Connexion Incorrecte">
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:25.231193" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:25.231193" elapsed="0.238911"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:24:25.470104" elapsed="0.284008"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:25.230194" elapsed="0.523918"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:25.760146" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:25.754112" elapsed="0.298172"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:26.053285" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:26.052284" elapsed="0.224529"/>
+</kw>
+<arg>${nom_utilisateur}</arg>
+<status status="PASS" start="2025-12-31T15:24:25.754112" elapsed="0.522701"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:26.278795" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:26.278795" elapsed="0.239932"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:26.520728" level="INFO">Typing text 'azerty' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:26.519729" elapsed="0.140568"/>
+</kw>
+<arg>${mot_de_passe}</arg>
+<status status="PASS" start="2025-12-31T15:24:26.277794" elapsed="0.383585"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:26.662294" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:26.661379" elapsed="0.174314"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:26.661379" elapsed="0.175315"/>
+</kw>
+<kw name="Vérifier Que Le Message d'Erreur Est Visible">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:24:26.837690" elapsed="0.745399"/>
+</kw>
+<kw name="Element Text Should Not Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:27.585091" level="INFO">Verifying element 'css=#modal-login .error' does not contain exact text ''.</msg>
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<status status="PASS" start="2025-12-31T15:24:27.583089" elapsed="0.052125"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:26.836694" elapsed="0.798520"/>
+</kw>
+<arg>robot</arg>
+<arg>azerty</arg>
+<status status="PASS" start="2025-12-31T15:24:25.230194" elapsed="2.405020"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:11.401056" elapsed="16.234158"/>
+</test>
+<test id="s1-s3-t6" name="Test Utilisateur Non Valide Mot De Passe Non Valide" line="14">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:27.641215" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:24:28.272165" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:24:27.640215" elapsed="4.478842"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:24:32.119057" elapsed="0.610689"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:32.730987" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:24:32.730987" elapsed="11.627866"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:27.639214" elapsed="16.720639"/>
+</kw>
+<kw name="Un Message d'Erreur Doit Etre Visible Apres Une Connexion Incorrecte">
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:44.361853" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:44.361853" elapsed="0.532800"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:24:44.895655" elapsed="0.453523"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:44.360854" elapsed="0.989324"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:45.352178" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:45.352178" elapsed="0.168722"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:45.521898" level="INFO">Typing text 'azerty' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:45.520900" elapsed="0.154146"/>
+</kw>
+<arg>${nom_utilisateur}</arg>
+<status status="PASS" start="2025-12-31T15:24:45.350178" elapsed="0.324868"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:45.677046" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:45.676045" elapsed="0.235979"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:45.913022" level="INFO">Typing text 'azerty' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:45.912024" elapsed="0.722474"/>
+</kw>
+<arg>${mot_de_passe}</arg>
+<status status="PASS" start="2025-12-31T15:24:45.676045" elapsed="0.958453"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:46.636497" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:24:46.636497" elapsed="0.210495"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:46.635498" elapsed="0.211494"/>
+</kw>
+<kw name="Vérifier Que Le Message d'Erreur Est Visible">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:24:46.847992" elapsed="1.130005"/>
+</kw>
+<kw name="Element Text Should Not Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:47.979996" level="INFO">Verifying element 'css=#modal-login .error' does not contain exact text ''.</msg>
+<arg>${ESPACE POUR AFFICHER LES ERREURS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<status status="PASS" start="2025-12-31T15:24:47.977997" elapsed="0.040132"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:46.846992" elapsed="1.171137"/>
+</kw>
+<arg>azerty</arg>
+<arg>azerty</arg>
+<status status="PASS" start="2025-12-31T15:24:44.359853" elapsed="3.658276"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:27.638213" elapsed="20.380918"/>
+</test>
+<status status="PASS" start="2025-12-31T15:22:38.816549" elapsed="129.205607"/>
+</suite>
+<suite id="s1-s4" name="Connexions-Valides" source="C:\MonProjetTests\tests_ihm\connexions-valides.robot">
+<test id="s1-s4-t1" name="Le Tableau De Bord Doit Etre Visible Apres Une Connexion Réussie" line="6">
+<kw name="Effectuer Une Connection Réussie" type="SETUP">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:48.104870" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:24:48.692106" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:24:48.104870" elapsed="3.640714"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:24:51.745584" elapsed="0.552069"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:24:52.298654" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:24:52.297653" elapsed="14.457867"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:48.103871" elapsed="18.651649"/>
+</kw>
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:06.757520" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:06.756519" elapsed="0.571035"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:25:07.327554" elapsed="0.130783"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:06.756519" elapsed="0.701818"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:07.460338" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:07.459338" elapsed="0.295722"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:07.756252" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:07.756252" elapsed="0.177674"/>
+</kw>
+<arg>${UTILISATEUR VALIDE}</arg>
+<status status="PASS" start="2025-12-31T15:25:07.458337" elapsed="0.475685"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:07.935924" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:07.934923" elapsed="0.156795"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:08.092723" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:08.092723" elapsed="0.119440"/>
+</kw>
+<arg>${MOT DE PASSE VALIDE}</arg>
+<status status="PASS" start="2025-12-31T15:25:07.934022" elapsed="0.278141"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:08.214164" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:08.213162" elapsed="0.158872"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:08.212163" elapsed="0.159871"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:48.103019" elapsed="20.269015"/>
+</kw>
+<kw name="Vérifiez Que Le Tableau De Bord Est Visible">
+<kw name="Wait Until Element Is Not Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-12-31T15:25:08.374035" elapsed="4.570346"/>
+</kw>
+<kw name="Title Should Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:13.178381" level="INFO">Page title is 'Tableau de bord - Livraison 3'.</msg>
+<arg>${TITRE TABLEAU DE BORD}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-12-31T15:25:12.945379" elapsed="0.234002"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:08.373033" elapsed="4.806348"/>
+</kw>
+<kw name="Effectuer Une Déconnexion Réussie" type="TEARDOWN">
+<kw name="Click Link" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:13.194060" level="INFO">Clicking link 'xpath=(//a[contains(text(),'Se déconnecter')])[3]'.</msg>
+<arg>${LIEN SE DECONNECTER}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:13.193379" elapsed="0.305305"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:13.192378" elapsed="0.306306"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:24:48.084549" elapsed="25.415134"/>
+</test>
+<test id="s1-s4-t2" name="Le Lien De Connexion Devrait Etre Visible Après Une Déconnexion Réussie" line="11">
+<kw name="Effectuer Une Connection Réussie" type="SETUP">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:13.505684" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:25:40.602339" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:25:13.504684" elapsed="30.931003"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:25:44.435687" elapsed="0.538357"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:44.975043" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:25:44.975043" elapsed="9.802044"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:13.504684" elapsed="41.272403"/>
+</kw>
+<kw name="Accéder A La Page De Connexion" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:54.779087" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:54.778087" elapsed="0.214060"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:25:54.992147" elapsed="0.278662"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:54.778087" elapsed="0.492722"/>
+</kw>
+<kw name="Entrer Le Nom d'Utilisateur" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:55.273080" level="INFO">Clicking element 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:55.272804" elapsed="0.241036"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:55.514843" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:55.513840" elapsed="0.231545"/>
+</kw>
+<arg>${UTILISATEUR VALIDE}</arg>
+<status status="PASS" start="2025-12-31T15:25:55.271842" elapsed="0.474540"/>
+</kw>
+<kw name="Entrer Le Mot De Passe" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:55.747381" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:55.747381" elapsed="0.137064"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:55.885444" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${mot_de_passe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:55.884445" elapsed="0.137946"/>
+</kw>
+<arg>${MOT DE PASSE VALIDE}</arg>
+<status status="PASS" start="2025-12-31T15:25:55.746382" elapsed="0.277010"/>
+</kw>
+<kw name="Soumettre Le Formulaire De Connexion" owner="commun">
+<kw name="Click Button" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:56.024390" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:56.024390" elapsed="0.174690"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:56.023392" elapsed="0.175688"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:13.503704" elapsed="42.695376"/>
+</kw>
+<kw name="Vérifiez Que Le Tableau De Bord Est Visible">
+<kw name="Wait Until Element Is Not Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-12-31T15:25:56.201080" elapsed="1.914710"/>
+</kw>
+<kw name="Title Should Be" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:58.126789" level="INFO">Page title is 'Tableau de bord - Livraison 3'.</msg>
+<arg>${TITRE TABLEAU DE BORD}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-12-31T15:25:58.115790" elapsed="0.010999"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:56.200080" elapsed="1.926709"/>
+</kw>
+<kw name="Effectuer Une Déconnexion Réussie">
+<kw name="Click Link" owner="Selenium2Library">
+<msg time="2025-12-31T15:25:58.128874" level="INFO">Clicking link 'xpath=(//a[contains(text(),'Se déconnecter')])[3]'.</msg>
+<arg>${LIEN SE DECONNECTER}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:25:58.127792" elapsed="2.140195"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:58.127792" elapsed="2.140195"/>
+</kw>
+<kw name="Vérifier Que Le Lien De Connexion Est Visible">
+<kw name="Wait Until Element Is Not Visible" owner="Selenium2Library">
+<arg>${LIEN SE DECONNECTER}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:00.274955" elapsed="0.104703"/>
+</kw>
+<kw name="Element Should Be Visible" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:00.526718" level="INFO">Element 'xpath=//a[contains(text(),'Se connecter')]' is displayed.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:00.380753" elapsed="0.145965"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:00.274955" elapsed="0.252762"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:25:13.501683" elapsed="47.028035"/>
+</test>
+<status status="PASS" start="2025-12-31T15:24:48.027133" elapsed="72.515595"/>
+</suite>
+<suite id="s1-s5" name="Contacter-Hote" source="C:\MonProjetTests\tests_ihm\contacter-hote.robot">
+<test id="s1-s5-t1" name="Contacter L'Hôte Avec Des Données Valides" line="10">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:00.603718" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:26:00.936049" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:00.603718" elapsed="2.387582"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:26:02.992381" elapsed="0.920442"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:03.913073" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:03.913073" elapsed="14.762234"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:00.600716" elapsed="18.075287"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:18.678003" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:18.677003" elapsed="5.016583"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:23.694587" elapsed="0.158245"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:18.677003" elapsed="5.175829"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:23.854830" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:23.853835" elapsed="0.322569"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:24.176404" elapsed="0.479296"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:24.656079" elapsed="0.037001"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:23.853835" elapsed="0.839245"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:24.695085" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:24.695085" elapsed="2.020273"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:26.716315" level="INFO">Typing text 'nezhamansar7@gmail.com' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:26.716315" elapsed="0.235570"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:26.952884" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:26.951885" elapsed="0.208034"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:27.160919" level="INFO">Typing text 'RÉSERVATION DE TEST' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:27.160919" elapsed="0.521581"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="PASS" start="2025-12-31T15:26:24.694084" elapsed="2.988416"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:27.685947" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:27.685947" elapsed="0.236169"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:27.685947" elapsed="0.237170"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:27.924011" elapsed="2.344827"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:27.924011" elapsed="2.344827"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:26:30.269836" elapsed="5.154246"/>
+</kw>
+<doc>Cas passant standard complet.</doc>
+<status status="PASS" start="2025-12-31T15:26:00.599715" elapsed="34.826369"/>
+</test>
+<test id="s1-s5-t2" name="Contacter L'Hôte Avec Un Champ Nom Vide" line="18">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:35.431186" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:26:36.902312" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:35.430083" elapsed="4.840078"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:26:40.271261" elapsed="0.084061"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:40.358156" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:40.357156" elapsed="7.859459"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:35.429085" elapsed="12.787530"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:48.218616" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:48.218616" elapsed="6.039480"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:54.259099" elapsed="0.055030"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:48.218616" elapsed="6.095513"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:54.316094" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:54.316094" elapsed="0.245026"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:54.562097" elapsed="0.260444"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:54.822541" elapsed="0.040883"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:54.315098" elapsed="0.548326"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:54.866421" level="INFO">Typing text '' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:54.866421" elapsed="0.204028"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:55.071426" level="INFO">Typing text 'nezhamansar7@gmail.com' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:55.070449" elapsed="0.266975"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:55.338423" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:55.337424" elapsed="0.213997"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:55.552420" level="INFO">Typing text 'RÉSERVATION DE TEST' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:55.552420" elapsed="0.241988"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="PASS" start="2025-12-31T15:26:54.864424" elapsed="0.929984"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:55.798568" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:26:55.798568" elapsed="0.152288"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:55.797568" elapsed="0.153288"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:26:55.951853" elapsed="0.716457"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:55.951853" elapsed="0.717481"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:26:56.669334" elapsed="3.266942"/>
+</kw>
+<doc>Vérifie l'échec si le nom est manquant.</doc>
+<status status="PASS" start="2025-12-31T15:26:35.428085" elapsed="24.508191"/>
+</test>
+<test id="s1-s5-t3" name="Contacter L'Hôte Avec Un Champ Email Vide" line="26">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:26:59.944636" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:27:00.543632" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:26:59.944636" elapsed="3.820380"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:27:03.765016" elapsed="0.255764"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:04.020780" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:27:04.020780" elapsed="11.514042"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:26:59.943594" elapsed="15.591228"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:15.535818" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:27:15.535818" elapsed="3.163050"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:27:18.698868" elapsed="0.108975"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:27:15.534822" elapsed="3.274020"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:18.810841" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:27:18.809842" elapsed="0.251433"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:27:19.061275" elapsed="0.259438"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:27:19.321714" elapsed="0.034989"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:27:18.809842" elapsed="0.546861"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:19.359704" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:27:19.358703" elapsed="0.211245"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:19.571946" level="INFO">Typing text '' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:27:19.570971" elapsed="0.138903"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:19.710875" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:27:19.710875" elapsed="0.252027"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:19.963903" level="INFO">Typing text 'RÉSERVATION DE TEST' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:27:19.963903" elapsed="0.334206"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>${EMPTY}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="PASS" start="2025-12-31T15:27:19.357705" elapsed="0.940404"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:20.300106" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:27:20.300106" elapsed="0.145356"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:27:20.299108" elapsed="0.146354"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:27:20.446463" elapsed="0.712879"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:27:20.446463" elapsed="0.712879"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:27:21.160237" elapsed="2.482789"/>
+</kw>
+<doc>Vérifie l'échec si l'email est manquant.</doc>
+<status status="PASS" start="2025-12-31T15:26:59.939961" elapsed="23.797909"/>
+</test>
+<test id="s1-s5-t4" name="Contacter L'Hôte Avec Un Format Email Invalide" line="34">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:27:24.995676" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:27:35.218442" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:27:24.995676" elapsed="30.056765"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:27:55.053410" elapsed="6.424668"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:28:01.479078" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:28:01.478078" elapsed="23.773682"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:27:24.994674" elapsed="60.258113"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:28:25.530035" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:28:25.530035" elapsed="15.571702"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:28:41.102304" elapsed="7.338999"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:28:25.530035" elapsed="22.911268"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:28:48.597354" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:28:48.597014" elapsed="94.202186"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:30:22.799200" elapsed="16.806536"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:30:39.605736" elapsed="18.547531"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:28:48.596019" elapsed="129.557248"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:30:58.175967" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:30:58.175967" elapsed="132.718146"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:33:10.894113" level="INFO">Typing text 'email_invalide' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:33:10.894113" elapsed="74.767870"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:34:25.662982" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<msg time="2025-12-31T15:34:50.789715" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.170)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff603b8a235
+	0x7ff6038e2630
+	0x7ff6036716dd
+	0x7ff603648e31
+	0x7ff6036fa22e
+	0x7ff60371b3d2
+	0x7ff6036bb0ed
+	0x7ff6036bbf63
+	0x7ff603bb5d60
+	0x7ff603bafe8a
+	0x7ff603bd1005
+	0x7ff6038fd71e
+	0x7ff603904e1f
+	0x7ff6038eb7c4
+	0x7ff6038eb97f
+	0x7ff6038d18e8
+	0x7ffcab2c7374
+	0x7ffcad2dcc91
+</msg>
+<msg time="2025-12-31T15:34:51.559563" level="FAIL">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=143.0.7499.170)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff603b8a235
+	0x7ff6038e2630
+	0x7ff6036714e5
+	0x7ff60365e56a
+	0x7ff60365c145
+	0x7ff60365cbcb
+	0x7ff603678e43
+	0x7ff60367c52f
+	0x7ff60367c5ef
+	0x7ff6036cb23a
+	0x7ff6036cb317
+	0x7ff6036c0b5c
+	0x7ff6036f2b0a
+	0x7ff6036bcc36
+	0x7ff60371baba
+	0x7ff6036bb0ed
+	0x7ff6036bbf63
+	0x7ff603bb5d60
+	0x7ff603bafe8a
+	0x7ff603bd1005
+	0x7ff6038fd71e
+	0x7ff603904e1f
+	0x7ff6038eb7c4
+	0x7ff6038eb97f
+	0x7ff6038d18e8
+	0x7ffcab2c7374
+	0x7ffcad2dcc91
+</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-12-31T15:34:25.661983" elapsed="26.048878">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=143.0.7499.170)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff603b8a235
+	0x7ff6038e2630
+	0x7ff6036714e5
+	0x7ff60365e56a
+	0x7ff60365c145
+	0x7ff60365cbcb
+	0x7ff603678e43
+	0x7ff60367c52f
+	0x7ff60367c5ef
+	0x7ff6036cb23a
+	0x7ff6036cb317
+	0x7ff6036c0b5c
+	0x7ff6036f2b0a
+	0x7ff6036bcc36
+	0x7ff60371baba
+	0x7ff6036bb0ed
+	0x7ff6036bbf63
+	0x7ff603bb5d60
+	0x7ff603bafe8a
+	0x7ff603bd1005
+	0x7ff6038fd71e
+	0x7ff603904e1f
+	0x7ff6038eb7c4
+	0x7ff6038eb97f
+	0x7ff6038d18e8
+	0x7ffcab2c7374
+	0x7ffcad2dcc91
+</status>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-12-31T15:34:51.724158" elapsed="0.000000"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>email_invalide</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="FAIL" start="2025-12-31T15:30:58.175967" elapsed="233.549193">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=143.0.7499.170)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff603b8a235
+	0x7ff6038e2630
+	0x7ff6036714e5
+	0x7ff60365e56a
+	0x7ff60365c145
+	0x7ff60365cbcb
+	0x7ff603678e43
+	0x7ff60367c52f
+	0x7ff60367c5ef
+	0x7ff6036cb23a
+	0x7ff6036cb317
+	0x7ff6036c0b5c
+	0x7ff6036f2b0a
+	0x7ff6036bcc36
+	0x7ff60371baba
+	0x7ff6036bb0ed
+	0x7ff6036bbf63
+	0x7ff603bb5d60
+	0x7ff603bafe8a
+	0x7ff603bd1005
+	0x7ff6038fd71e
+	0x7ff603904e1f
+	0x7ff6038eb7c4
+	0x7ff6038eb97f
+	0x7ff6038d18e8
+	0x7ffcab2c7374
+	0x7ffcad2dcc91
+</status>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<status status="NOT RUN" start="2025-12-31T15:34:52.150313" elapsed="0.000000"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<status status="NOT RUN" start="2025-12-31T15:34:52.464920" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:34:52.758978" elapsed="53.317794"/>
+</kw>
+<doc>Vérifie l'échec si le format email est incorrect (ex: pas de @).</doc>
+<status status="FAIL" start="2025-12-31T15:27:24.747329" elapsed="501.329443">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=143.0.7499.170)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff603b8a235
+	0x7ff6038e2630
+	0x7ff6036714e5
+	0x7ff60365e56a
+	0x7ff60365c145
+	0x7ff60365cbcb
+	0x7ff603678e43
+	0x7ff60367c52f
+	0x7ff60367c5ef
+	0x7ff6036cb23a
+	0x7ff6036cb317
+	0x7ff6036c0b5c
+	0x7ff6036f2b0a
+	0x7ff6036bcc36
+	0x7ff60371baba
+	0x7ff6036bb0ed
+	0x7ff6036bbf63
+	0x7ff603bb5d60
+	0x7ff603bafe8a
+	0x7ff603bd1005
+	0x7ff6038fd71e
+	0x7ff603904e1f
+	0x7ff6038eb7c4
+	0x7ff6038eb97f
+	0x7ff6038d18e8
+	0x7ffcab2c7374
+	0x7ffcad2dcc91
+</status>
+</test>
+<test id="s1-s5-t5" name="Contacter L'Hôte Avec Un Champ Message Vide" line="42">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:35:46.084015" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:35:49.196425" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:35:46.084015" elapsed="7.204144"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:35:53.289163" elapsed="0.203323"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:35:53.492486" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:35:53.492486" elapsed="12.293847"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:35:46.081958" elapsed="19.704375"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:05.788336" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:05.788336" elapsed="2.840674"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:08.629010" elapsed="0.073085"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:05.787335" elapsed="2.914760"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:08.704094" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:08.704094" elapsed="0.300813"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:09.004907" elapsed="0.297588"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:09.303493" elapsed="0.043400"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:08.703093" elapsed="0.643800"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:09.352896" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:09.352896" elapsed="0.242875"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:09.596771" level="INFO">Typing text 'nezhamansar7@gmail.com' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:09.595771" elapsed="0.215231"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:09.812002" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:09.811002" elapsed="0.179700"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:09.991732" level="INFO">Typing text '' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:09.991732" elapsed="0.134946"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-12-31T15:36:09.349893" elapsed="0.776785"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:10.128677" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:10.128677" elapsed="0.161316"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:10.127679" elapsed="0.163314"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:10.291994" elapsed="0.549422"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:10.290993" elapsed="0.550423"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:36:10.841416" elapsed="3.520062"/>
+</kw>
+<doc>Vérifie l'échec si le message est manquant.</doc>
+<status status="PASS" start="2025-12-31T15:35:46.079410" elapsed="28.283075"/>
+</test>
+<test id="s1-s5-t6" name="Contacter L'Hôte Avec Un Champ Téléphone Vide" line="52">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:14.365474" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:36:14.629378" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:14.365474" elapsed="2.397612"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:36:16.764088" elapsed="0.072489"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:16.837576" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:16.836577" elapsed="5.075764"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:14.364475" elapsed="7.547866"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:21.918340" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:21.914342" elapsed="2.470069"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:24.384411" elapsed="0.051002"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:21.913342" elapsed="2.522071"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:24.437411" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:24.437411" elapsed="0.337096"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:24.774507" elapsed="0.296812"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:25.072284" elapsed="0.060380"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:24.436417" elapsed="0.696247"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:25.136665" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:25.135666" elapsed="0.263895"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:25.400559" level="INFO">Typing text 'nezhamansar7@gmail.com' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:25.399561" elapsed="0.229002"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:25.629563" level="INFO">Typing text '' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:25.628563" elapsed="0.160996"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:25.790560" level="INFO">Typing text 'RÉSERVATION DE TEST' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:25.790560" elapsed="0.308761"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${EMPTY}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="PASS" start="2025-12-31T15:36:25.133665" elapsed="0.965656"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:26.101321" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:26.101321" elapsed="0.162151"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:26.100322" elapsed="0.163150"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:26.264487" elapsed="0.722397"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:26.264487" elapsed="0.722397"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:36:26.987884" elapsed="2.363879"/>
+</kw>
+<doc>Vérifie le comportement si le téléphone est omis (souvent optionnel ou requis).</doc>
+<status status="PASS" start="2025-12-31T15:36:14.363476" elapsed="14.989289"/>
+</test>
+<test id="s1-s5-t7" name="Contacter L'Hôte Avec Un Email Sans Extension" line="60">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:29.357985" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:36:29.557925" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:29.356985" elapsed="2.141231"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:36:31.498216" elapsed="0.091289"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:31.590506" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:31.590506" elapsed="6.133352"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:29.356985" elapsed="8.366873"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:37.727859" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:37.726860" elapsed="4.166639"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:41.893499" elapsed="0.059017"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:37.725859" elapsed="4.226657"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:41.954496" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:41.954496" elapsed="0.260373"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:42.214869" elapsed="0.305926"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:42.521797" elapsed="0.047157"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:41.953497" elapsed="0.615457"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:42.571956" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:42.570956" elapsed="0.240429"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:42.812384" level="INFO">Typing text 'user@testacademy' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:42.812384" elapsed="0.219000"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:43.032384" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:43.031384" elapsed="0.194000"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:43.226384" level="INFO">Typing text 'RÉSERVATION DE TEST' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:43.225384" elapsed="0.247002"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>user@testacademy</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="PASS" start="2025-12-31T15:36:42.569955" elapsed="0.902431"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:43.475388" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:36:43.474385" elapsed="0.198229"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:43.473384" elapsed="0.200228"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:36:43.674612" elapsed="0.729737"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:43.673612" elapsed="0.730737"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:36:44.405348" elapsed="2.476262"/>
+</kw>
+<doc>Teste un format d'email invalide spécifique (ex: user@domain sans .com).</doc>
+<status status="PASS" start="2025-12-31T15:36:29.354765" elapsed="17.527846"/>
+</test>
+<test id="s1-s5-t8" name="Contacter L'Hôte Avec Des Caractères Spéciaux Dans Le Nom" line="68">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:46.885922" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:36:47.174473" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:46.884800" elapsed="2.076160"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:36:48.961961" elapsed="0.071062"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:49.034021" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:49.033023" elapsed="3.430474"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:36:46.884800" elapsed="5.579697"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:52.473496" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:36:52.473496" elapsed="0.965572"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<msg time="2025-12-31T15:36:59.517674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-31T15:36:59.517674" level="FAIL">Element 'xpath=//button[@data-target='#modal-contact-host']' not visible after 5 seconds.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-12-31T15:36:53.440066" elapsed="6.468504">Element 'xpath=//button[@data-target='#modal-contact-host']' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-12-31T15:36:52.470497" elapsed="7.438892">Element 'xpath=//button[@data-target='#modal-contact-host']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<status status="NOT RUN" start="2025-12-31T15:36:59.909571" elapsed="0.000000"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<arg>!@#$%^&amp;*()</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>${MESSAGE TEST}</arg>
+<status status="NOT RUN" start="2025-12-31T15:36:59.910571" elapsed="0.000000"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<status status="NOT RUN" start="2025-12-31T15:36:59.911570" elapsed="0.000000"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<status status="NOT RUN" start="2025-12-31T15:36:59.911570" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:36:59.912571" elapsed="2.790266"/>
+</kw>
+<doc>Vérifie si le formulaire accepte ou rejette les caractères spéciaux.</doc>
+<status status="FAIL" start="2025-12-31T15:36:46.883614" elapsed="15.820242">Element 'xpath=//button[@data-target='#modal-contact-host']' not visible after 5 seconds.</status>
+</test>
+<test id="s1-s5-t9" name="Contacter L'Hôte Avec Un Message Très Court" line="76">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:02.711584" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:37:02.904049" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:37:02.710588" elapsed="1.853595"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:37:04.565184" elapsed="0.067999"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:04.634184" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:37:04.634184" elapsed="13.933489"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:02.709586" elapsed="15.858087"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:18.569637" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:37:18.569637" elapsed="2.544029"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:21.114648" elapsed="0.054999"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:18.568638" elapsed="2.602008"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:21.171661" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:21.171661" elapsed="0.247986"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:21.419647" elapsed="0.336000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:21.756647" elapsed="0.067999"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:21.170646" elapsed="0.654000"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:21.827647" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:21.827647" elapsed="0.240000"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:22.068684" level="INFO">Typing text 'nezhamansar7@gmail.com' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:22.068684" elapsed="0.251966"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:22.321646" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:22.321646" elapsed="0.175218"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:22.497854" level="INFO">Typing text 'A' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:22.497854" elapsed="2.461687"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>A</arg>
+<status status="PASS" start="2025-12-31T15:37:21.825646" elapsed="3.133895"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:24.970538" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:24.970538" elapsed="0.645927"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:24.969539" elapsed="0.646926"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:25.619466" elapsed="1.141707"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:25.618464" elapsed="1.143698"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:37:26.762162" elapsed="2.974242"/>
+</kw>
+<doc>Teste la validation de longueur minimale du message (ex: 1 caractère).</doc>
+<status status="PASS" start="2025-12-31T15:37:02.707584" elapsed="27.029823"/>
+</test>
+<test id="s1-s5-t10" name="Contacter L'Hôte Avec Injection HTML Simple Dans Le Message" line="84">
+<kw name="Ouvrir Le Navigateur Et Accéder A La Page d'Accueil" owner="commun" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:29.740404" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<msg time="2025-12-31T15:37:29.921407" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:37:29.740404" elapsed="1.704928"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-31T15:37:31.446331" elapsed="0.096003"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:31.542334" level="INFO">Opening url 'http://livraison3.testacademy.fr/'</msg>
+<arg>${HOMEY URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:37:31.542334" elapsed="4.986055"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:29.739405" elapsed="6.788984"/>
+</kw>
+<kw name="Accéder A La Page De L'Annonce" owner="commun">
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:36.532391" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/listing/affordable-urban-room/'</msg>
+<arg>${URL ANNONCE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-31T15:37:36.532391" elapsed="4.121466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:40.653857" elapsed="0.070999"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:36.531389" elapsed="4.193467"/>
+</kw>
+<kw name="Ouvrir Le Formulaire De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:40.726856" level="INFO">Clicking element 'xpath=//button[@data-target='#modal-contact-host']'.</msg>
+<arg>${BOUTON OUVRIR MODAL CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:40.726856" elapsed="0.342999"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${MODAL CONTACT HOTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:41.070858" elapsed="0.374999"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${CHAMP NOM CONTACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:41.445857" elapsed="0.065023"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:40.725854" elapsed="0.785026"/>
+</kw>
+<kw name="Remplir Le Formulaire De Contact" owner="commun">
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:41.514859" level="INFO">Typing text 'NEZHA' into text field 'name=name'.</msg>
+<arg>${CHAMP NOM CONTACT}</arg>
+<arg>${nom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:41.514859" elapsed="0.209999"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:41.725856" level="INFO">Typing text 'nezhamansar7@gmail.com' into text field 'name=email'.</msg>
+<arg>${CHAMP EMAIL CONTACT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:41.725856" elapsed="0.206003"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:41.932858" level="INFO">Typing text '0707099109' into text field 'name=phone'.</msg>
+<arg>${CHAMP TELEPHONE CONTACT}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:41.932858" elapsed="0.222000"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:42.154858" level="INFO">Typing text '&lt;b&gt;Test Gras&lt;/b&gt;' into text field 'name=message'.</msg>
+<arg>${CHAMP MESSAGE CONTACT}</arg>
+<arg>${msg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:42.154858" elapsed="0.209001"/>
+</kw>
+<arg>${NOM TEST}</arg>
+<arg>${EMAIL TEST}</arg>
+<arg>${PHONE TEST}</arg>
+<arg>&lt;b&gt;Test Gras&lt;/b&gt;</arg>
+<status status="PASS" start="2025-12-31T15:37:41.511858" elapsed="0.852001"/>
+</kw>
+<kw name="Soumettre La Demande De Contact" owner="commun">
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-12-31T15:37:42.366857" level="INFO">Clicking element 'css=.contact_listing_host'.</msg>
+<arg>${BOUTON SOUMETTRE CONTACT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-31T15:37:42.366857" elapsed="0.148000"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:42.365858" elapsed="0.148999"/>
+</kw>
+<kw name="Vérifier Que Le Feedback Est Visible" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${ZONE MESSAGE FEEDBACK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-31T15:37:42.516823" elapsed="0.969901"/>
+</kw>
+<status status="PASS" start="2025-12-31T15:37:42.515858" elapsed="0.970866"/>
+</kw>
+<kw name="Close Browser" owner="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-31T15:37:43.487725" elapsed="2.381136"/>
+</kw>
+<doc>Teste la sécurité de base du champ message.</doc>
+<status status="PASS" start="2025-12-31T15:37:29.738440" elapsed="16.130421"/>
+</test>
+<status status="FAIL" start="2025-12-31T15:26:00.551714" elapsed="705.319151"/>
+</suite>
+<status status="FAIL" start="2025-12-31T15:22:38.684734" elapsed="907.189129"/>
+</suite>
+<statistics>
+<total>
+<stat pass="18" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests Ihm" id="s1" pass="18" fail="2" skip="0">Tests Ihm</stat>
+<stat name="1-Se connecter-valide" id="s1-s1" pass="1" fail="0" skip="0">Tests Ihm.1-Se connecter-valide</stat>
+<stat name="2-Login" id="s1-s2" pass="1" fail="0" skip="0">Tests Ihm.2-Login</stat>
+<stat name="Connexions-Invalides" id="s1-s3" pass="6" fail="0" skip="0">Tests Ihm.Connexions-Invalides</stat>
+<stat name="Connexions-Valides" id="s1-s4" pass="2" fail="0" skip="0">Tests Ihm.Connexions-Valides</stat>
+<stat name="Contacter-Hote" id="s1-s5" pass="8" fail="2" skip="0">Tests Ihm.Contacter-Hote</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-12-31T15:22:43.277456" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:23:07.892420" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:23:21.250229" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:23:37.743174" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:24:13.931292" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:24:28.272165" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:24:48.692106" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:25:40.602339" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:26:00.936049" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:26:36.902312" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:27:00.543632" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:27:35.218442" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:34:50.789715" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.170)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff603b8a235
+	0x7ff6038e2630
+	0x7ff6036716dd
+	0x7ff603648e31
+	0x7ff6036fa22e
+	0x7ff60371b3d2
+	0x7ff6036bb0ed
+	0x7ff6036bbf63
+	0x7ff603bb5d60
+	0x7ff603bafe8a
+	0x7ff603bd1005
+	0x7ff6038fd71e
+	0x7ff603904e1f
+	0x7ff6038eb7c4
+	0x7ff6038eb97f
+	0x7ff6038d18e8
+	0x7ffcab2c7374
+	0x7ffcad2dcc91
+</msg>
+<msg time="2025-12-31T15:35:49.196425" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:36:14.629378" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:36:29.557925" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:36:47.174473" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:37:02.904049" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-12-31T15:37:29.921407" level="WARN">The chromedriver version (142.0.7444.175) detected in PATH at C:\WebDrivers\chromedriver.exe might not be compatible with the detected chrome version (143.0.7499.170); currently, chromedriver 143.0.7499.169 is recommended for chrome 143.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
