@@ -16,6 +16,7 @@ ${CHAMP NOM UTILISATEUR}     name=username
 ${CHAMP MOT DE PASSE}        name=password
 ${BOUTON VALIDER}            css=.homey_login_button
 ${TITRE TABLEAU DE BORD}     Tableau de bord - Livraison 3
+${ESPACE POUR AFFICHER LES ERREURS}    css=#modal-login .error
 
 # --- VARIABLES CONTACT HOTE ---
 ${URL ANNONCE}               http://${SERVEUR}/index.php/listing/affordable-urban-room/
@@ -28,14 +29,18 @@ ${CHAMP MESSAGE CONTACT}     name=message
 ${BOUTON SOUMETTRE CONTACT}  css=.contact_listing_host
 ${ZONE MESSAGE FEEDBACK}     css=.homey_contact_messages
 
+# --- DONNÉES DE TEST ---
+${NOM TEST}           NEZHA
+${EMAIL TEST}         nezhamansar7@gmail.com
+${PHONE TEST}         0707099109
+${MESSAGE TEST}       RÉSERVATION DE TEST
+
 *** Keywords ***
-# --- KEYWORDS GENERAUX ---
 Ouvrir Le Navigateur Et Accéder A La Page d'Accueil
     Open Browser    browser=${NAVIGATEUR}
     Maximize Browser Window
     Go To    ${HOMEY URL}
 
-# --- KEYWORDS CONNEXION ---
 Accéder A La Page De Connexion
     Wait Until Element Is Visible    ${LIEN SE CONNECTER}    timeout=15s
     Click Element    ${LIEN SE CONNECTER}
@@ -53,7 +58,6 @@ Entrer Le Mot De Passe
 Soumettre Le Formulaire De Connexion
     Click Button    ${BOUTON VALIDER}
 
-# --- KEYWORDS CONTACT HOTE ---
 Accéder A La Page De L'Annonce
     Go To    ${URL ANNONCE}
     Wait Until Element Is Visible    ${BOUTON OUVRIR MODAL CONTACT}    timeout=15s
