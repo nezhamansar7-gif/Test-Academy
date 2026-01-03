@@ -1,5 +1,5 @@
-*** Settings***
-Library    Selenium2Library
+*** Settings ***
+Library     Selenium2Library
 Resource    commun.resource
 
 *** Test Cases ***
@@ -24,12 +24,17 @@ Effectuer Une Connection Réussie
     Soumettre Le Formulaire De Connexion
     
 Vérifiez Que Le Tableau De Bord Est Visible
-    Wait Until Element Is Not Visible    ${CHAMP NOM UTILISATEUR}
+    # Attendre que le titre h1 soit visible pour confirmer la connexion
+    Wait Until Element Is Visible    xpath=//h1[contains(text(),'Tableau de bord')]    timeout=15s
     Title Should Be    ${TITRE TABLEAU DE BORD}
 
 Effectuer Une Déconnexion Réussie    
+    # Vérifier la présence du lien de déconnexion avant de cliquer
+    Wait Until Element Is Visible    ${LIEN SE DECONNECTER}    timeout=10s
     Click Link    ${LIEN SE DECONNECTER}
     
 Vérifier Que Le Lien De Connexion Est Visible
-    Wait Until Element Is Not Visible    ${LIEN SE DECONNECTER}
+    # Pause pour éviter l'erreur 'stale element reference' après le rafraîchissement
+    Sleep    2s
+    Wait Until Element Is Visible    ${LIEN SE CONNECTER}    timeout=15s
     Element Should Be Visible    ${LIEN SE CONNECTER}
