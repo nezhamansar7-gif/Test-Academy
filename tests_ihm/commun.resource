@@ -8,7 +8,7 @@ ${HOMEY URL}      http://${SERVEUR}/
 ${NAVIGATEUR}        Chrome
 
 # --- VARIABLES DE CONNEXION (EXISTANTES) ---
-${LIEN SE CONNECTER}    xpath=//a[contains(text(),'Se connecter')]
+${LIEN SE CONNECTER}    xpath=//a[contains(normalize-space(text()), 'Se connecter')]
 ${LIEN SE DECONNECTER}    xpath=(//a[contains(text(),'Se déconnecter')])[3]
 ${UTILISATEUR VALIDE}     robot
 ${MOT DE PASSE VALIDE}    robot
@@ -54,8 +54,9 @@ Ouvrir Le Navigateur Et Accéder A La Page d'Accueil
 
 # --- KEYWORDS CONNEXION ---
 Accéder A La Page De Connexion
-   Click Element    ${LIEN SE CONNECTER}
-   Wait Until Element Is Visible    ${CHAMP NOM UTILISATEUR}
+Wait Until Element Is Visible    ${LIEN SE CONNECTER}    timeout=15s
+    Click Element    ${LIEN SE CONNECTER}
+    Wait Until Element Is Visible    ${CHAMP NOM UTILISATEUR}    timeout=10s
 
 Entrer Le Nom d'Utilisateur
     [Arguments]    ${nom_utilisateur}
@@ -68,8 +69,10 @@ Entrer Le Mot De Passe
    Input Text    ${CHAMP MOT DE PASSE}    ${mot_de_passe}
 
 Soumettre Le Formulaire De Connexion
-   Click Button    ${BOUTON VALIDER}
-
+Soumettre Le Formulaire De Connexion
+    Click Button    ${BOUTON VALIDER}
+    # اختياري: تسنى حتى يغبر الفورميلير باش نأكدوا الدخول
+    Wait Until Element Is Not Visible    ${BOUTON VALIDER}    timeout=10s
 # --- KEYWORDS CONTACT HOTE (NOUVEAUX) ---
 Accéder A La Page De L'Annonce
     Go To    ${URL ANNONCE}
