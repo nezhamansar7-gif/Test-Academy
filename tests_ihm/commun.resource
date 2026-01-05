@@ -33,7 +33,7 @@ ${ZONE MESSAGE FEEDBACK}     css=.homey_contact_messages
 ${NOM TEST}           NEZHA
 ${EMAIL TEST}         nezhamansar7@gmail.com
 ${PHONE TEST}         0707099109
-${MESSAGE TEST}       RÉSERVATION DE TEST
+${MESSAGE TEST}       TEST AUTO JENKINS NEZHA
 
 *** Keywords ***
 Ouvrir Le Navigateur Et Accéder A La Page d'Accueil
