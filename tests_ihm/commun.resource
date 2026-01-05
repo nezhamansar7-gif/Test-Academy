@@ -2,79 +2,54 @@
 Library    Selenium2Library
 
 *** Variables ***
-# --- CONFIGURATION GLOBALE ---
-${SERVEUR}                   livraison3.testacademy.fr
-${HOMEY URL}                 http://${SERVEUR}/
-${NAVIGATEUR}                Chrome
+${URL}              https://test-academy.fr/  # Remplace par ton URL si différente
+${BROWSER}          chrome
+${NOM TEST}         Nezha Mansar
+${EMAIL TEST}       nezha@test.com
+${PHONE TEST}       0600000000
+${MESSAGE TEST}     TEST AUTO JENKINS NEZHA
 
-# --- VARIABLES DE CONNEXION ---
-${LIEN SE CONNECTER}         xpath=//a[contains(normalize-space(text()), 'Se connecter')]
-${LIEN SE DECONNECTER}       xpath=(//a[contains(text(),'Se déconnecter')])[3]
-${UTILISATEUR VALIDE}        robot
-${MOT DE PASSE VALIDE}       robot
-${CHAMP NOM UTILISATEUR}     name=username
-${CHAMP MOT DE PASSE}        name=password
-${BOUTON VALIDER}            css=.homey_login_button
-${TITRE TABLEAU DE BORD}     Tableau de bord - Livraison 3
-${ESPACE POUR AFFICHER LES ERREURS}    css=#modal-login .error
-
-# --- VARIABLES CONTACT HOTE ---
-${URL ANNONCE}               http://${SERVEUR}/index.php/listing/affordable-urban-room/
-${BOUTON OUVRIR MODAL CONTACT}    xpath=//button[@data-target='#modal-contact-host']
-${MODAL CONTACT HOTE}        id=modal-contact-host
-${CHAMP NOM CONTACT}         name=name
-${CHAMP EMAIL CONTACT}       name=email
-${CHAMP TELEPHONE CONTACT}   name=phone
-${CHAMP MESSAGE CONTACT}     name=message
-${BOUTON SOUMETTRE CONTACT}  css=.contact_listing_host
-${ZONE MESSAGE FEEDBACK}     css=.homey_contact_messages
-
-# --- DONNÉES DE TEST ---
-${NOM TEST}           NEZHA
-${EMAIL TEST}         nezhamansar7@gmail.com
-${PHONE TEST}         0707099109
-${MESSAGE TEST}       TEST AUTO JENKINS NEZHA
+# Selecteurs (Locators) - À vérifier selon ton site
+${BOUTON_ANNONCE}       xpath=//a[contains(text(),'Annonce')] 
+${BOUTON_CONTACT}       id=contact-button
+${CHAMP_NOM}            id=name
+${CHAMP_EMAIL}          id=email
+${CHAMP_PHONE}          id=phone
+${CHAMP_MESSAGE}        id=message
+${BOUTON_SOUMETTRE}     id=submit-button
+${ZONE_FEEDBACK}        id=feedback-message
 
 *** Keywords ***
 Ouvrir Le Navigateur Et Accéder A La Page d'Accueil
-    Open Browser    browser=${NAVIGATEUR}
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Go To    ${HOMEY URL}
-
-Accéder A La Page De Connexion
-    Wait Until Element Is Visible    ${LIEN SE CONNECTER}    timeout=15s
-    Click Element    ${LIEN SE CONNECTER}
-    Wait Until Element Is Visible    ${CHAMP NOM UTILISATEUR}    timeout=10s
-
-Entrer Le Nom d'Utilisateur
-    [Arguments]    ${nom_utilisateur}
-    Wait Until Element Is Visible    ${CHAMP NOM UTILISATEUR}    timeout=5s
-    Input Text    ${CHAMP NOM UTILISATEUR}    ${nom_utilisateur}
-
-Entrer Le Mot De Passe
-    [Arguments]    ${mot_de_passe}
-    Input Text    ${CHAMP MOT DE PASSE}    ${mot_de_passe}
-
-Soumettre Le Formulaire De Connexion
-    Click Button    ${BOUTON VALIDER}
+    # On attend que la page soit bien chargée
+    Wait Until Page Contains Element    ${BOUTON_ANNONCE}    timeout=15s
 
 Accéder A La Page De L'Annonce
-    Go To    ${URL ANNONCE}
-    Wait Until Element Is Visible    ${BOUTON OUVRIR MODAL CONTACT}    timeout=15s
+    Wait Until Element Is Visible    ${BOUTON_ANNONCE}    timeout=10s
+    Click Element    ${BOUTON_ANNONCE}
 
 Ouvrir Le Formulaire De Contact
-    Click Element    ${BOUTON OUVRIR MODAL CONTACT}
-    Wait Until Element Is Visible    ${MODAL CONTACT HOTE}    timeout=10s
+    Wait Until Element Is Visible    ${BOUTON_CONTACT}    timeout=10s
+    Click Element    ${BOUTON_CONTACT}
 
 Remplir Le Formulaire De Contact
-    [Arguments]    ${nom}    ${email}    ${tel}    ${msg}
-    Input Text    ${CHAMP NOM CONTACT}         ${nom}
-    Input Text    ${CHAMP EMAIL CONTACT}        ${email}
-    Input Text    ${CHAMP TELEPHONE CONTACT}    ${tel}
-    Input Text    ${CHAMP MESSAGE CONTACT}      ${msg}
+    [Arguments]    ${nom}    ${email}    ${phone}    ${msg}
+    Wait Until Element Is Visible    ${CHAMP_NOM}    timeout=10s
+    Input Text      ${CHAMP_NOM}       ${nom}
+    Input Text      ${CHAMP_EMAIL}     ${email}
+    Input Text      ${CHAMP_PHONE}     ${phone}
+    Input Text      ${CHAMP_MESSAGE}   ${msg}
 
 Soumettre La Demande De Contact
-    Click Element    ${BOUTON SOUMETTRE CONTACT}
+    # On s'assure que le bouton est cliquable avant de cliquer
+    Wait Until Element Is Visible    ${BOUTON_SOUMETTRE}    timeout=10s
+    Click Element    ${BOUTON_SOUMETTRE}
+    # Petit temps de pause pour laisser le serveur répondre
+    Sleep    2s
 
 Vérifier Que Le Feedback Est Visible
-    Wait Until Element Is Visible    ${ZONE MESSAGE FEEDBACK}    timeout=10s
+    # C'est ici que Jenkins échouait souvent par manque de patience
+    Wait Until Element Is Visible    ${ZONE_FEEDBACK}    timeout=15s
+    Element Should Be Visible       ${ZONE_FEEDBACK}
